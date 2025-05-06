@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jamaica Health Insurance Insights</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for blue and green theme */
+        :root {
+            --color-primary-blue: #1E3A8A; /* Darker blue */
+            --color-secondary-green: #059669; /* Teal green */
+            --color-light-blue: #BFDBFE; /* Light blue */
+            --color-light-green: #A7F3D0; /* Light green */
+            --color-text-dark: #1F2937; /* Dark gray text */
+            --color-text-light: #F9FAFB; /* Light gray text */
+        }
+        .bg-primary-blue { background-color: var(--color-primary-blue); }
+        .text-primary-blue { color: var(--color-primary-blue); }
+        .bg-secondary-green { background-color: var(--color-secondary-green); }
+        .text-secondary-green { color: var(--color-secondary-green); }
+        .bg-light-blue { background-color: var(--color-light-blue); }
+        .text-light-blue { color: var(--color-light-blue); }
+        .bg-light-green { background-color: var(--color-light-green); }
+        .text-light-green { color: var(--color-light-green); }
+        .text-text-dark { color: var(--color-text-dark); }
+        .text-text-light { color: var(--color-text-light); }
+        .border-primary-blue { border-color: var(--color-primary-blue); }
+        .border-secondary-green { border-color: var(--color-secondary-green); }
+
+        /* Custom font - Inter */
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Add smooth scrolling */
+            scroll-behavior: smooth;
+        }
+
+        /* Style for images to ensure responsiveness and prevent overflow */
+        img {
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.3s ease-in-out; /* Add transition for hover effect */
+        }
+
+        /* Hover effect for images */
+        img:hover {
+            transform: scale(1.02); /* Slightly enlarge image on hover */
+        }
+
+        /* Fade-in animation for sections */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in-section {
+            opacity: 0; /* Start invisible */
+            animation: fadeIn 0.8s ease-out forwards; /* Apply animation */
+            /* Add a delay based on the section if needed for staggered effect */
+        }
+
+         /* Hover effect for statistic boxes */
+        .statistic-box {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .statistic-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Table styling */
+        .data-table th, .data-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0; /* Tailwind gray-200 */
+        }
+
+        .data-table th {
+            background-color: var(--color-primary-blue);
+            color: var(--color-text-light);
+            font-weight: bold;
+        }
+
+        .data-table tbody tr:nth-child(even) {
+            background-color: #f8fafc; /* Tailwind gray-50 */
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-text-dark">
+
+    <nav class="bg-primary-blue p-4 shadow-md fixed w-full top-0 z-10">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-text-light text-2xl font-bold">Jamaica Health Insights</a>
+            <div class="space-x-4">
+                <a href="#overview" class="text-light-blue hover:text-text-light">Overview</a>
+                <a href="#comparison" class="text-light-blue hover:text-text-light">Comparison</a>
+                <a href="#nhip" class="text-light-blue hover:text-text-light">NHIP</a>
+                <a href="#data-process" class="text-light-blue hover:text-text-light">Data Process</a>
+                <a href="#llm-models" class="text-light-blue hover:text-text-light">LLM Models</a>
+                <a href="#serving-stack" class="text-light-blue hover:text-light-blue">Serving Stack</a>
+                <a href="#infrastructure" class="text-light-blue hover:text-text-light">Infrastructure</a>
+                <a href="#document-requirements" class="text-light-blue hover:text-text-light">Documents</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-secondary-green text-text-light py-20 text-center mt-16 fade-in-section"> <div class="container mx-auto">
+            <h1 class="text-5xl font-bold mb-4">Understanding Health Insurance in Jamaica</h1>
+            <p class="text-xl mb-8">Exploring the landscape of public and private healthcare coverage.</p>
+            <button class="bg-primary-blue text-text-light px-8 py-3 rounded-full text-lg font-semibold hover:bg-light-blue hover:text-primary-blue transition duration-300 ease-in-out">Learn More</button>
+        </div>
+    </header>
+
+    <section id="overview" class="py-16 fade-in-section">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-primary-blue mb-12">Jamaica: Population and Insurance Landscape</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-lg mb-4">Jamaica has a population of approximately 2.8 million people. Around 25% of the population is covered by private insurance schemes, with about 5% of this group covered by the National Insurance Scheme of Jamaica.</p>
+                    <h3 class="text-2xl font-semibold text-secondary-green mb-4">Private Insurance Trends:</h3>
+                    <ul class="list-disc list-inside text-lg space-y-2">
+                        <li>Growing Market</li>
+                        <li>Comprehensive Coverage, including pre-existing and chronic conditions.</li>
+                        <li>Wider range of products and services (e.g., wellness programs).</li>
+                        <li>Adoption of digital solutions (online policy management, telemedicine, mobile apps).</li>
+                        <li>Driven by economic growth, increased disposable incomes, GDP growth, GDP per capita growth, and Purchasing Power Parity increase.</li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="ChatGPT Image May 6, 2025, 06_46_22 PM.png" alt="Jamaica Overview Placeholder" class="rounded-lg shadow-lg w-full h-auto">
+                </div>
+            </div>
+            <div class="mt-12">
+                <h3 class="text-2xl font-semibold text-secondary-green mb-4">General Statistics:</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-white p-6 rounded-lg shadow-md statistic-box">
+                        <p class="text-4xl font-bold text-primary-blue">75%</p>
+                        <p class="text-lg">Approx. Bed Occupancy Rate</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md statistic-box">
+                        <p class="text-4xl font-bold text-primary-blue">1 Million</p>
+                        <p class="text-lg">Approx. Curative Visits</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md statistic-box">
+                        <p class="text-4xl font-bold text-primary-blue">$750</p>
+                        <p class="text-lg">Mean Public Visit Spend</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md statistic-box">
+                        <p class="text-4xl font-bold text-primary-blue">$2500</p>
+                        <p class="text-lg">Mean Private Visit Spend</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md statistic-box">
+                        <p class="text-4xl font-bold text-primary-blue">↓↓</p>
+                        <p class="text-lg">Unemployment Rate</p>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-md statistic-box">
+                        <p class="text-4xl font-bold text-primary-blue">↑↑</p>
+                        <p class="text-lg">Population</p>
+                    </div>
+                </div>
+                 <div class="mt-8 bg-white p-6 rounded-lg shadow-md">
+                     <h4 class="text-xl font-semibold text-primary-blue mb-4">Cost Comparison Trend (Placeholder)</h4>
+                     <p class="text-gray-600">A chart could be placed here to visualize the difference in public vs private healthcare costs and their differential increase over time.</p>
+                     </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="comparison" class="bg-light-blue py-16 fade-in-section">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-primary-blue mb-12">Public vs. Private Health Insurance</h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white rounded-lg shadow-md data-table">
+                    <thead>
+                        <tr class="bg-primary-blue text-text-light">
+                            <th class="py-3 px-4 text-left">Category</th>
+                            <th class="py-3 px-4 text-left">Public Health Insurance</th>
+                            <th class="py-3 px-4 text-left">Private Health Insurance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-3 px-4">Cost</td>
+                            <td class="py-3 px-4">Free at point of service</td>
+                            <td class="py-3 px-4">Premiums and out-of-pocket expenses</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 bg-gray-50">
+                            <td class="py-3 px-4">Access</td>
+                            <td class="py-3 px-4">Universal (for citizens and legal residents)</td>
+                            <td class="py-3 px-4">Limited, typically to those who can afford it</td>
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-3 px-4">Wait times</td>
+                            <td class="py-3 px-4">Longer wait times</td>
+                            <td class="py-3 px-4">Shorter wait times</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 bg-gray-50">
+                            <td class="py-3 px-4">Quality of care</td>
+                            <td class="py-3 px-4">Basic care, can be limited</td>
+                            <td class="py-3 px-4">Potentially better facilities and equipment</td>
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-3 px-4">Specialized care</td>
+                            <td class="py-3 px-4">Limited availability</td>
+                            <td class="py-3 px-4">Wider range of specialties available</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 bg-gray-50">
+                            <td class="py-3 px-4">Coverage</td>
+                            <td class="py-3 px-4">Basic healthcare</td>
+                            <td class="py-3 px-4">Varies, can be comprehensive</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="nhip" class="py-16 fade-in-section">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-primary-blue mb-12">National Health Insurance Plan (NHIP)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                 <div>
+                    <img src="NHF_LOGO_WEB_3c4d5e1a604c409ae47b83c42ee0419b.png" alt="NHIP Placeholder" class="rounded-lg shadow-lg w-full h-auto">
+                </div>
+                <div>
+                    <p class="text-lg mb-4">The National Health Insurance Plan (NHIP) is a risk-pooling mechanism designed to offer financial protection against the burden of illness, ensuring access to care for those who need it.</p>
+                    <p class="text-lg mb-4">It also serves as a payment mechanism for healthcare providers, offering prompt and regular reimbursements.</p>
+                    <p class="text-lg mb-4">Furthermore, the NHIP acts as a valuable database for planners and policymakers, providing insights into disease patterns, service utilization, health expenditure, and patient preferences.</p>
+                    <h3 class="text-2xl font-semibold text-secondary-green mb-4">Key Considerations:</h3>
+                    <ul class="list-disc list-inside text-lg space-y-2">
+                        <li>Mandatory vs Compulsory implementation.</li>
+                        <li>Public/Private partner coverage models.</li>
+                        <li>Integration of Micro-insurance schemes.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="data-process" class="bg-light-green py-16 fade-in-section">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-primary-blue mb-12">Data Ingestion and Training Process</h2>
+             <div class="flex justify-center mb-12">
+                <img src="- visual selection(7).png" alt="Data Ingestion and Training Process Diagram" class="rounded-lg shadow-lg max-w-full h-auto">
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold text-secondary-green mb-4">Phase One: Discovery (One Month)</h3>
+                    <p class="text-lg mb-4">This phase involves identifying, documenting, and ingesting all viable data sources into the data pipeline. Both digital and non-digital data (NDD) are scraped. NDD requires scanning and processing.</p>
+                    <h4 class="text-xl font-semibold text-primary-blue mb-4">List of Documents for Data Ingestion:</h4>
+                    <h5 class="text-lg font-semibold text-secondary-green mb-2">Structured Data:</h5>
+                    <ul class="list-disc list-inside text-lg space-y-2 mb-4">
+                        <li>Policy Details</li>
+                        <li>Identity Proof</li>
+                        <li>Medical Reports</li>
+                        <li>Original Claim Form</li>
+                        <li>Doctor's Prescription</li>
+                        <li>Other Potential Documents (Indoor case papers, Ambulance receipts, Pharmacy bills, FIR, Proof of income/employment, Pension Forms)</li>
+                        <li>Internal database data</li>
+                        <li>Lab Reports or Test results</li>
+                        <li>Additional Considerations for Expats</li>
+                    </ul>
+                     <h5 class="text-lg font-semibold text-secondary-green mb-2">Unstructured/Semi-structured Data:</h5>
+                    <ul class="list-disc list-inside text-lg space-y-2">
+                        <li>Emails between patient and Insurance/Healthcare provider</li>
+                        <li>PDFs, notes, or handwritten documents</li>
+                        <li>Non-digital data (NDD) crucial for context</li>
+                        <li>Inter-agency documents</li>
+                        <li>List of illnesses with no coverage</li>
+                    </ul>
+                     <div class="mt-8 flex justify-center">
+                         <img src="- visual selection(3).png" alt="Data Ingestion and Tokenization Process Flow" class="rounded-lg shadow-lg max-w-full h-auto">
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold text-secondary-green mb-4">Phase Two: Data Ingestion Layer/Training (2-3 Months)</h3>
+                    <p class="text-lg mb-4">In this phase, the curated data is ingested, and the training process for the Generative AI architecture begins. This involves tokenization, where data is converted into tokens to estimate training time and hardware requirements.</p>
+                    <h4 class="text-xl font-semibold text-primary-blue mb-4">Token Estimation:</h4>
+                    <p class="text-lg mb-4">Estimates are made for both structured and unstructured data, considering factors like document length, words per page, relevance, and instance rates. Image tokens are significantly larger than text tokens.</p>
+                    <p class="text-lg mb-4 font-semibold">Estimated Total Training Tokens Range: 60 billion - 150 billion (including Image Factor)</p>
+                    <p class="text-lg mb-4">Based on these estimates, an LLM/Agentic system is engineered to handle the client's requirements.</p>
+                    <h4 class="text-xl font-semibold text-primary-blue mb-4">LLM Query Handling with Access Control:</h4>
+                     <div class="mt-8 flex justify-center">
+                         <img src="- visual selection(9).png" alt="LLM Query Handling with Access Control Diagram" class="rounded-lg shadow-lg max-w-full h-auto">
+                    </div>
+                     <p class="text-lg mt-4">This process ensures secure and efficient functionality by combining vectorization, access control, and query-time filtering, respecting user roles and privileges when accessing data.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="llm-models" class="py-16 fade-in-section">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-primary-blue mb-12">LLMs - Sizing and Placement</h2>
+             <div class="flex justify-center mb-12">
+                <img src="- visual selection(2).png" alt="AI Model Selection Diagram" class="rounded-lg shadow-lg max-w-full h-auto">
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md statistic-box">
+                    <h3 class="text-2xl font-semibold text-secondary-green mb-4">Vision-Language Models (VLMs)</h3>
+                    <p class="text-lg mb-4">Selected models like Qwen/Qwen2.5-VL-7B-Instruct and OpenGVLab/InternVL3-8B are suitable for use cases involving visual data. Qwen/Qwen2.5-VL-32B-Instruct can handle low-resolution images with high confidence. ColPali is efficient for document processing.</p>
+                    <h4 class="text-xl font-semibold text-primary-blue mb-2">Key Models:</h4>
+                    <ul class="list-disc list-inside text-lg space-y-1">
+                        <li>Qwen/Qwen2.5-VL-32B-Instruct</li>
+                        <li>Qwen/Qwen2.5-VL-7B-Instruct</li>
+                        <li>OpenGVLab/InternVL3-8B</li>
+                        <li>openbmb/MiniCPM-V-2_6</li>
+                        <li>vidore/colpali-v1.3</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md statistic-box">
+                    <h3 class="text-2xl font-semibold text-secondary-green mb-4">Code LLMs</h3>
+                    <p class="text-lg mb-4">Qwen models (Qwen/Qwen2.5-Coder-32B-Instruct, Qwen/Qwen2.5-Coder-14B-Instruct) show strong performance in coding benchmarks. Alternatives like CodeLlama and StarCoder provide output variance.</p>
+                     <h4 class="text-xl font-semibold text-primary-blue mb-2">Key Models:</h4>
+                    <ul class="list-disc list-inside text-lg space-y-1">
+                        <li>Qwen/Qwen2.5-Coder-32B-Instruct</li>
+                        <li>Qwen/Qwen2.5-Coder-14B-Instruct</li>
+                        <li>deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct</li>
+                        <li>meta-llama/CodeLlama-70b-Instruct-hf</li>
+                        <li>bigcode/starcoder2-15b</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md statistic-box">
+                    <h3 class="text-2xl font-semibold text-secondary-green mb-4">Text Generation LLMs</h3>
+                    <p class="text-lg mb-4">The Qwen3 series is recommended for reasoning tasks. Distilled versions of DeepSeek and Llama models also perform well and offer flexibility in model selection.</p>
+                     <h4 class="text-xl font-semibold text-primary-blue mb-2">Key Models:</h4>
+                    <ul class="list-disc list-inside text-lg space-y-1">
+                        <li>Qwen/Qwen3-32B</li>
+                        <li>Qwen/Qwen3-30B-A3B</li>
+                        <li>Qwen/Qwen3-14B</li>
+                        <li>Qwen/Qwen2.5-32B-Instruct</li>
+                        <li>deepseek-ai/DeepSeek-R1-Distill-Qwen-32B</li>
+                        <li>meta-llama/Llama-3.3-70B-Instruct</li>
+                         <li>Qwen/Qwen3-8B</li>
+                        <li>Qwen/Qwen3-4B</li>
+                        <li>meta-llama/Llama-3.2-3B-Instruct</li>
+                    </ul>
+                </div>
+            </div>
+             <div class="mt-12 flex justify-center">
+                <img src="- visual selection(6).png" alt="Model Placement and Task Complexity Diagram" class="rounded-lg shadow-lg max-w-full h-auto">
+            </div>
+             <div class="mt-12 flex justify-center">
+                <img src="- visual selection(5).png" alt="Memory Footprint of Models on Apple MPS Chart" class="rounded-lg shadow-lg max-w-full h-auto">
+            </div>
+             <p class="text-lg mt-8 text-center">The memory footprint of these models on Apple MPS is estimated based on parameter counts and quantization scaling, considering different inference and fine-tuning scenarios.</p>
+        </div>
+    </section>
+
+     <section id="serving-stack" class="bg-light-blue py-16 fade-in-section">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-primary-blue mb-12">Model Serving Stack Integration</h2>
+             <div class="flex justify-center mb-12">
+                <img src="- visual selection(4).png" alt="Model Serving Stack Integration Diagram" class="rounded-lg shadow-lg max-w-full h-auto">
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="bg-white p-6 rounded-lg shadow-md statistic-box">
+                    <h3 class="text-2xl font-semibold text-secondary-green mb-4">Ollama</h3>
+                    <p class="text-lg">Local server for quantized models.</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md statistic-box">
+                    <h3 class="text-2xl font-semibold text-secondary-green mb-4">VLLM</h3>
+                    <p class="text-lg">High-throughput option for large models.</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md statistic-box">
+                    <h3 class="text-2xl font-semibold text-secondary-green mb-4">Hugging Face</h3>
+                    <p class="text-lg">Platform for custom models and fine-tuning.</p>
+                </div>
+            </div>
+             <div class="mt-12 flex justify-center">
+                <img src="- visual selection(8).png" alt="Enterprise Readiness Funnel Diagram" class="rounded-lg shadow-lg max-w-full h-auto">
+            </div>
+             <p class="text-lg mt-8 text-center">The integration of these components supports the journey towards an enterprise-ready system, focusing on infrastructure, security, feedback, user interface, and continuous improvement.</p>
+        </div>
+    </section>
+
+    <section id="infrastructure" class="py-16 bg-light-green fade-in-section">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-primary-blue mb-12">Infrastructure and Storage Requirements</h2>
+
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold text-secondary-green mb-4">Storage Requirement for Incoming Data</h3>
+                <p class="text-lg">Similar to the token estimation, there would be a need to provide adequate storage for daily incoming unstructured and semi-structured data.</p>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold text-secondary-green mb-4">Sizing Analysis for Vector Database Supporting RAG/AGENTS</h3>
+                <p class="text-lg mb-4">Key Assumptions:</p>
+                <ul class="list-disc list-inside text-lg space-y-2 mb-4">
+                    <li>Corpus Size: 150 billion tokens (text to be indexed for retrieval).</li>
+                    <li>Embedding Dimension: 1024 (float32, 4 bytes per value).</li>
+                    <li>Text Chunk Size: 512 tokens per chunk (common default).</li>
+                    <li>Token Storage: 4 bytes per token (UTF-8 or similar encoding).</li>
+                    <li>Indexing Method: Hybrid in-memory/disk (e.g., DiskANN) for balance of speed and cost.</li>
+                </ul>
+
+                <h4 class="text-xl font-semibold text-primary-blue mb-4">1. Vector Storage</h4>
+                <p class="text-lg mb-2">Number of Chunks:</p>
+                <p class="text-lg mb-4">150B tokens / 512 tokens per chunk ≈ 293M chunks</p>
+                <p class="text-lg mb-2">Vector Size per Chunk:</p>
+                <p class="text-lg mb-4">1024 dimensions × 4 bytes = 4 KB</p>
+                <p class="text-lg mb-2">Total Vector Storage:</p>
+                <p class="text-lg mb-4">293M × 4 KB = 1.17 TB</p>
+
+                 <h4 class="text-xl font-semibold text-primary-blue mb-4">2. Text Storage</h4>
+                <p class="text-lg mb-2">Text per Chunk:</p>
+                <p class="text-lg mb-4">512 tokens × 4 bytes = 2 KB</p>
+                <p class="text-lg mb-2">Total Text Storage:</p>
+                <p class="text-lg mb-4">293M × 2 KB = 572 GB</p>
+
+                <h4 class="text-xl font-semibold text-primary-blue mb-4">3. Index Storage</h4>
+                <p class="text-lg mb-2">Disk-Based Index (e.g., DiskANN):</p>
+                <p class="text-lg mb-4">Roughly equal to vector size (~1.2 TB).</p>
+                <p class="text-lg mb-2">Total Disk Storage (Vectors + Text + Index):</p>
+                <p class="text-lg mb-4">1.17 TB + 0.57 TB + 1.2 TB ≈ 3 TB (with 20% overhead: ~3.6 TB).</p>
+
+                <h4 class="text-xl font-semibold text-primary-blue mb-4">4. Memory Requirements</h4>
+                <p class="text-lg mb-2">DiskANN (Hybrid SSD/RAM):</p>
+                <p class="text-lg mb-4">Caches ~10–20% of the index in memory.</p>
+                <p class="text-lg mb-4">1.2 TB × 0.2 = 0.24 TB (240 GB RAM)</p>
+                <p class="text-lg mb-4">Recommendation: 256–512 GB RAM for headroom.</p>
+                <p class="text-lg mb-2">Pure In-Memory Index (e.g., HNSW):</p>
+                <p class="text-lg mb-4">1.2 TB RAM, requiring distributed nodes (e.g., 10+ nodes with 128 GB each).</p>
+
+                <h4 class="text-xl font-semibold text-primary-blue mb-4">5. Network and Compute</h4>
+                <p class="text-lg mb-2">Query Throughput: Scales with nodes (e.g., 1k–10k queries/second with distributed clusters).</p>
+                <p class="text-lg mb-4">CPU/GPU: Modern CPUs (e.g., Intel Xeon) or GPUs (for accelerated similarity search).</p>
+
+                <h4 class="text-xl font-semibold text-primary-blue mb-4">6. Design Considerations</h4>
+                <ul class="list-disc list-inside text-lg space-y-2 mb-4">
+                    <li>Chunk Size: Smaller chunks → more vectors (e.g., 256 tokens → ~586M vectors, doubling storage).</li>
+                    <li>Quantization: Use 8-bit SQ (reduces vector storage by 75% but impacts accuracy).</li>
+                    <li>Distributed vs. Single-Node:</li>
+                    <ul class="list-circle list-inside ml-8 space-y-2">
+                        <li>Single-Node: Feasible with DiskANN (~512 GB RAM + 4 TB SSD).</li>
+                        <li>Distributed: Required for pure in-memory indices (e.g., Milvus cluster).</li>
+                    </ul>
+                    <li>Metadata: Add 10–20% storage for additional metadata (e.g., timestamps, source URLs).</li>
+                </ul>
+            </div>
+
+            <div class="mb-12">
+                 <h3 class="text-2xl font-semibold text-secondary-green mb-4">Summary of Memory Requirements</h3>
+                 <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white rounded-lg shadow-md data-table">
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>Size</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Vectors (1024D)</td>
+                                <td>1.17 TB</td>
+                                <td>Float32 embeddings.</td>
+                            </tr>
+                            <tr>
+                                <td>Text Chunks</td>
+                                <td>572 GB</td>
+                                <td>512 tokens/chunk.</td>
+                            </tr>
+                            <tr>
+                                <td>Index (DiskANN)</td>
+                                <td>1.2 TB</td>
+                                <td>Hybrid SSD storage.</td>
+                            </tr>
+                            <tr>
+                                <td>RAM (DiskANN)</td>
+                                <td>240–512 GB</td>
+                                <td>For cached graph nodes.</td>
+                            </tr>
+                            <tr>
+                                <td>Total Storage</td>
+                                <td>3.6 TB (with overhead)</td>
+                                <td>SSDs recommended for fast retrieval.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                 </div>
+                 <p class="text-lg mt-4">Adjust based on query latency/throughput requirements and accuracy trade-offs. The overhead on RAM can be reduced by lowering the precision and/or size of the embedding.</p>
+            </div>
+
+            <div>
+                <h3 class="text-2xl font-semibold text-secondary-green mb-4">LLM Placement on Machines</h3>
+                
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md statistic-box">
+                    <h3 class="text-2xl font-semibold text-secondary-green mb-4">Mac M3 Ultra Studio - 512GB</h3>
+                    <p class="text-lg mb-4">Hosts the largest vision and routing models.</p>
+                    <h4 class="text-xl font-semibold text-primary-blue mb-2">Key Models:</h4>
+                    <ul class="list-disc list-inside text-lg space-y-1">
+                        <li><b>Vision/OCR:</b> Qwen2.5‑VL‑32B (BF16), Qwen2.5‑VL‑7B (BF16), InternVL3‑8B (BF16) – all in BF16 to preserve accuracy on image/OCR task.</li>
+                        <li><b>Document Processing:</b> ColPali (e.g. PaliGemma-3B backbone, BF16 or INT8) for document processing.</li>
+                        <li><b>Code/SQL:</b> Qwen2.5‑Coder‑32B (INT8) for code/SQL generation.</li>
+                        <li><b>Routing/Decision:</b> Qwen3‑32B (2× instances, INT8) and Qwen3‑30B‑A3B (1×, INT8) – large-context models for routing/decision.</li>
+                        <li><b>Supporting LLMs:</b> Qwen3‑14B (2×, INT8) for heavy reasoning overflow.</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md statistic-box">
+                    <h3 class="text-2xl font-semibold text-secondary-green mb-4">Mac M4 Max Studio - 128GB</h3>
+                    <p class="text-lg mb-4">Mix of mid-sized agents</p>
+                     <h4 class="text-xl font-semibold text-primary-blue mb-2">Key Models:</h4>
+                    <ul class="list-disc list-inside text-lg space-y-1">
+                        <li><b>Qwen3‑32B</b> (1×, INT8) and <b>Qwen3‑30B-A3B</b> (1×, INT8) – additional routing/model assistance.</li>
+                        <li><b>Qwen3‑14B</b> (1×, 4‑bit), <b>Qwen3‑8B</b> (2×, 4‑bit), <b>Qwen3‑4B</b> (2×, 4‑bit) – parallel text processing models (summarization, QA).</li>
+                        <li><b>Llama-3.2-3B</b> (2×, 4‑bit) – small backup model for lightweight tasks or fallback.</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md statistic-box">
+                    <h3 class="text-2xl font-semibold text-secondary-green mb-4">Mac M4 Max Studio - 128GB</h3>
+                    <p class="text-lg mb-4">Similar model distribution as above for parallelism.</p>
+                     <h4 class="text-xl font-semibold text-primary-blue mb-2">Key Models:</h4>
+                    <ul class="list-disc list-inside text-lg space-y-1">
+                        <li><b>Qwen3‑32B</b> (1×, INT8), <b>Qwen3‑30B‑A3B</b> (1×, INT8) – additional routing/model assistance and used for reasoning tasks.</li>
+                        <li><b>Qwen3‑14B</b> (1×, 4‑bit), <b>Qwen3‑8B</b> (2×, 4‑bit), <b>Qwen3‑4B</b> (2×, 4‑bit) – smaller models to offload web searching, web scraping workflows.</li>
+                        <li><b>Llama-3.2-3B</b> (2×, 4‑bit) – small backup model for lightweight tasks or fallback.</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md statistic-box">
+                    <h3 class="text-2xl font-semibold text-secondary-green mb-4">Mac M4 Max Studio - 128GB</h3>
+                    <p class="text-lg mb-4">Additional mid/small models.</p>
+                     <h4 class="text-xl font-semibold text-primary-blue mb-2">Key Models:</h4>
+                    <ul class="list-disc list-inside text-lg space-y-1">
+                        <li><b>Qwen2.5-Coder-14B</b> (2×, 4‑bit GGUF) for code/SQL tasks.</li>
+                        <li><b>Qwen3‑14B</b> (2×, 4‑bit), <b>Qwen3‑8B</b> (2×, 4‑bit), <b>Llama‑3.2‑3B</b> (4×, 4‑bit) – small models for email summarizer agents and other small enterprise tasks.</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md statistic-box">
+                    <h3 class="text-2xl font-semibold text-secondary-green mb-4">Mac M4 Max Studio - 128GB</h3>
+                    <p class="text-lg mb-4">The Qwen3 series is recommended for reasoning tasks. Distilled versions of DeepSeek and Llama models also perform well and offer flexibility in model selection.</p>
+                     <h4 class="text-xl font-semibold text-primary-blue mb-2">Key Models:</h4>
+                    <ul class="list-disc list-inside text-lg space-y-1">
+                        <li><b>Qwen2.5-Coder-14B</b> (1×, 4‑bit GGUF) for code/SQL tasks.</li>
+                        <li><b>Qwen3‑14B</b> (2×, 4‑bit), <b>Qwen3‑8B</b> (2×, 4‑bit), <b>Qwen3‑4B</b> (4×, 4‑bit) – Some more small models for concurrency or fallbacks.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="system-design-stack" class="bg-light-blue py-16 fade-in-section">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-primary-blue mb-12">Architecture Design</h2>
+            <div class="flex justify-center mb-12 relative">
+                <div class="image-container">
+                    <img src="diagram-export-6-5-2025-6_14_10-pm.png" alt="System Design Diagram" class="rounded-lg shadow-lg max-w-full h-auto">
+                    <button class="expand-btn" onclick="toggleFullScreen()">Expand</button>
+                </div>
+            </div>
+            <p class="text-lg mt-8 text-center">The integration of these components supports the journey towards an enterprise-ready system, focusing on infrastructure, security, feedback, user interface, and continuous improvement.</p>
+        </div>
+    </section>
+    
+    <style>
+        .image-container {
+            position: relative;
+            display: inline-block;
+        }
+    
+        .expand-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+    
+        .image-container:hover .expand-btn {
+            opacity: 1;
+        }
+    
+        .fullscreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .fullscreen img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+    </style>
+    
+    <script>
+        function toggleFullScreen() {
+            const imgContainer = document.querySelector('.image-container');
+            const img = imgContainer.querySelector('img');
+    
+            if (!document.fullscreenElement) {
+                const fullscreenDiv = document.createElement('div');
+                fullscreenDiv.className = 'fullscreen';
+                const fullscreenImg = document.createElement('img');
+                fullscreenImg.src = img.src;
+                fullscreenImg.alt = img.alt;
+                fullscreenDiv.appendChild(fullscreenImg);
+                document.body.appendChild(fullscreenDiv);
+    
+                fullscreenDiv.addEventListener('click', () => {
+                    fullscreenDiv.remove();
+                });
+            }
+        }
+    </script>
+
+    <section id="document-requirements" class="py-16 fade-in-section">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-primary-blue mb-12">Documents Required for Health Insurance Claims</h2>
+             <div class="flex justify-center mb-12">
+                <img src="- visual selection(1).png" alt="Documents Required for Health Insurance Claims Diagram" class="rounded-lg shadow-lg max-w-full h-auto">
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md statistic-box">
+                    <h3 class="text-2xl font-semibold text-secondary-green mb-4">Policy Details</h3>
+                    <p class="text-lg">Outlines coverage, benefits, and terms.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md statistic-box">
+                    <h3 class="text-2xl font-semibold text-secondary-green mb-4">Identity Proof</h3>
+                    <p class="text-lg">Validates the claimant's identity.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md statistic-box">
+                    <h3 class="text-2xl font-semibold text-secondary-green mb-4">Medical Reports</h3>
+                    <p class="text-lg">Provides medical history and conditions.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md statistic-box">
+                    <h3 class="text-2xl font-semibold text-secondary-green mb-4">Original Claim Form</h3>
+                    <p class="text-lg">Formally requests reimbursement.</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md statistic-box">
+                    <h3 class="text-2xl font-semibold text-secondary-green mb-4">Doctor's Prescription</h3>
+                    <p class="text-lg">Outlines necessary medication or treatment.</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md statistic-box">
+                    <h3 class="text-2xl font-semibold text-secondary-green mb-4">Other Documents</h3>
+                    <p class="text-lg">Includes hospital papers, receipts, and reports.</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md statistic-box">
+                    <h3 class="text-2xl font-semibold text-secondary-green mb-4">Internal Database Data</h3>
+                    <p class="text-lg">Provides organizational data for verification.</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md statistic-box">
+                    <h3 class="text-2xl font-semibold text-secondary-green mb-4">Lab Reports / Scans</h3>
+                    <p class="text-lg">Offers diagnostic test results.</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md statistic-box">
+                    <h3 class="text-2xl font-semibold text-secondary-green mb-4">Expat Considerations</h3>
+                    <p class="text-lg">Addresses insurance needs for expats.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="bg-primary-blue text-text-light py-8 text-center">
+        <div class="container mx-auto">
+            <p>&copy; 2025 Vox Proprietary Document. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript to add the 'fade-in-section' class when the section is in view
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.fade-in-section');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationDelay = entry.target.dataset.delay || '0s';
+                        entry.target.style.opacity = 1;
+                    } else {
+                         // Optional: remove the class when out of view if you want the animation to replay on scroll up
+                         // entry.target.style.opacity = 0;
+                    }
+                });
+            }, {
+                threshold: 0.1 // Trigger when 10% of the section is visible
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+
+</body>
+</html>
+<script>
+    // JavaScript to add the 'fade-in-section' class when the section is in view
+    document.addEventListener('DOMContentLoaded', () => {
+        const sections = document.querySelectorAll('.fade-in-section');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = entry.target.dataset.delay || '0s';
+                    entry.target.style.opacity = 1;
+                } else {
+                     // Optional: remove the class when out of view if you want the animation to replay on scroll up
+                     // entry.target.style.opacity = 0;
+                }
+            });
+        }, {
+            threshold: 0.1 // Trigger when 10% of the section is visible
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+</script>
